@@ -12,12 +12,12 @@ const MessageComp = ({ message: { text, user, time }, name }) => {
 
   return isSentByCurrentUser ? (
     <div
-      className="justifyEnd"
       style={{
         display: "flex",
         alignItems: "center",
         marginRight: 10,
         marginBottom: 8,
+        justifyContent: "flex-end",
       }}
     >
       <div style={{ marginRight: 8 }}>
@@ -36,12 +36,12 @@ const MessageComp = ({ message: { text, user, time }, name }) => {
     </div>
   ) : (
     <div
-      className="justifyStart"
       style={{
         display: "flex",
         alignItems: "center",
         marginLeft: 10,
         marginBottom: 8,
+        justifyContent: "flex-start",
       }}
     >
       <div

@@ -69,7 +69,22 @@ const ChatScreen = ({ location }) => {
   const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [modal, setModal] = useState(false);
   const ENDPOINT = "https://rpchatapp.herokuapp.com/";
+
+  const showModal = () => {
+    if (window.innerWidth <= 600) {
+      setModal(true);
+    } else {
+      setModal(false);
+    }
+  };
+
+  useEffect(() => {
+    showModal();
+  }, []);
+
+  window.addEventListener("resize", showModal);
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
