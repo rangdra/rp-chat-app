@@ -1,14 +1,13 @@
-import React from "react";
-import Join from "./components/Join/Join";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import ChatScreen from "./screens/ChatScreen";
+import FormJoin from './pages/FormJoin';
+import Chat from './pages/Chat';
 
 const App = () => {
   return (
     <Router>
-      <Route path="/" exact component={Join} />
-      <Route path="/chat" component={ChatScreen} />
+      <Route path="/" exact component={FormJoin} />
+      <Route path="/chat" component={Chat} />
     </Router>
   );
 };
